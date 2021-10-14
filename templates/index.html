@@ -1,0 +1,165 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <br>
+        <input type="radio" name="options" value='hw' id="hw" checked> hand written <br>
+        <input type="radio" name="options" value='ppt' id="ppt"> ppt <br>
+        <input type="submit" />
+    </form>
+</body>
+
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>
+
+        Notify
+    </title>
+    <style>
+        body {
+
+            background: url('https://cdn.videvo.net/videvo_files/video/premium/getty_12/thumbnails/istock-517093048_small.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        #notify {
+            font-family: Copperplate;
+            font-size: 5vw;
+            letter-spacing: 10px;
+            color: white;
+            margin-left: 10px;
+
+            text-align: left;
+        }
+
+        #desc {
+            font-family: Copperplate;
+            font-size: 2vw;
+            letter-spacing: 2px;
+            color: white;
+            margin-top: -100px;
+            margin-left: 210px;
+            font-style: italic;
+
+        }
+
+        #choose {
+            margin-top: 350px;
+            margin-left: 300px;
+        }
+
+        #myFile {
+            height: 50px;
+            width: 400px;
+            font-family: Copperplate;
+            font-size: 2vw;
+            background-color: #111212;
+            color: red;
+            border-radius: 2px;
+            margin-top: 325px;
+        }
+
+        label {
+            padding: 10px;
+            background: #111212;
+            display: table;
+            color: white;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            font-size: 19px;
+            margin-top: 25px;
+            margin-left: 320px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        #output {
+            margin-left: 145px;
+        }
+
+        #hw {
+            font-family: Copperplate;
+            color: white;
+            font-size: 2vw;
+            letter-spacing: 2px;
+            color: white;
+            margin-left: 250px;
+            margin-top: 10px;
+        }
+
+        #ppt {
+            font-family: Copperplate;
+            color: white;
+            font-size: 2vw;
+            letter-spacing: 2px;
+            color: white;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        #opt {
+            font-family: Copperplate;
+            color: white;
+            font-size: 1.4vw;
+        }
+    </style>
+
+</head>
+<script>
+    var loadFile = function (event) {
+        var video = document.getElementById('output');
+        video.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
+
+<body>
+
+    <img src="static\\images\\notify2.png" width="33%" style="margin-left: -40px; margin-top: -20px;">
+    <!-- <img src="{{url_for('static',filename = 'images//logo.png')}}" alt="logo" widtt="1%" /> -->
+    <!-- <p id="notify"> Notify </p> -->
+    <p id="desc"> - 'The new way of taking notes!'</p>
+    <br>
+    <video width="500" height="250" id="output" controls></video>
+    <p
+        style="font-family: Copperplate ; font-size: 2vw ; letter-spacing: 2px ;color: white ; margin-left: 230px ; margin-top: 30px;">
+        Drop your lecture here! </p>
+    <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+        <input type="radio" name="options" value='hw' id="hw" checked><span id="opt"> Handwritten </span>
+        <input type="radio" name="options" value='ppt' id="ppt"> <span id="opt"> PowerPoint </span>
+
+        <label> Choose File
+            <input type="file" name="file" size="20" onchange="loadFile(event)" style="display: none;">
+        </label>
+
+        <button type="submit" style="padding: 10px;background:#111212; display: table;color: white;border: 2px solid yellow;border-radius: 8px ;
+    font-size: 19px ;
+    margin-left: 345px ; margin-top: 25px ; "> Submit</button>
+
+    </form>
+
+    </div>
+</body>
+
+</html>
